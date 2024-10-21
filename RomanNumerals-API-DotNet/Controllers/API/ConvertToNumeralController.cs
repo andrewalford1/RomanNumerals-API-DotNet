@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using RomanNumerals_API_DotNet.Queries;
 
-namespace RomanNumerals_API_DotNet.Controllers.API
+namespace RomanNumerals_API_DotNet.Controllers.API;
+
+[Route("api/[controller]")]
+[ApiController]
+public sealed class ConvertToNumeralController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ConvertToNumeralController : ControllerBase
+    public string Get([FromQuery] ConvertToRomanNumeralQuery query)
     {
-        public string Get(int number)
-        {
-            throw new NotImplementedException();
-        }
+        // TODO, convert to Roman numeral.
+        return query.Number.ToString();
     }
 }
