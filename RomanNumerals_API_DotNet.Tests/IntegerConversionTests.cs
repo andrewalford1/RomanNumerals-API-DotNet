@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RomanNumerals_API_DotNet.Services;
-using System.Collections.Generic;
 
 namespace RomanNumerals_API_DotNet.Tests;
 
@@ -15,43 +14,33 @@ public class IntegerConversionTests
         _service = new IntegerConversionService();
     }
 
-    [TestMethod]
-    public void ConvertsCorrectly()
+    [DataTestMethod]
+    [DataRow(1, "I")]
+    [DataRow(4, "IV")]
+    [DataRow(5, "V")]
+    [DataRow(9, "IX")]
+    [DataRow(10, "X")]
+    [DataRow(40, "XL")]
+    [DataRow(50, "L")]
+    [DataRow(90, "XC")]
+    [DataRow(100, "C")]
+    [DataRow(400, "CD")]
+    [DataRow(500, "D")]
+    [DataRow(900, "CM")]
+    [DataRow(1000, "M")]
+    public void ConvertsCorrectly(int value, string expected)
     {
-        var cases = new List<(int value, string expected)>()
-        {
-            (1, "I"),
-            (4, "IV"),
-            (5, "V"),
-            (9, "IX"),
-            (10, "X"),
-            (100, "C"),
-            (40, "XL"),
-            (50, "L"),
-            (90, "XC"),
-            (400, "CD"),
-            (500, "D"),
-            (900, "CM"),
-            (1000, "M")
-        };
-
-        foreach (var testCase in cases)
-        {
-            var actual = _service.ToRomanNumerals(testCase.value);
-            Assert.AreEqual(actual, testCase.expected);
-        }
+        var actual = _service.ToRomanNumerals(value);
+        Assert.AreEqual(expected, actual);
     }
 
-    [TestMethod]
-    public void ConvertsSomeSpecialCases()
+    [DataTestMethod]
+    [DataRow(3999, "MMMCMXCIX")]
+    [DataRow(2016, "MMXVI")]
+    [DataRow(2018, "MMXVIII")]
+    public void ConvertsSomeSpecialCases(int value, string expected)
     {
-        var actual = _service.ToRomanNumerals(3999);
-        Assert.AreEqual(actual, "MMMCMXCIX");
-
-        actual = _service.ToRomanNumerals(2016);
-        Assert.AreEqual(actual, "MMXVI");
-
-        actual = _service.ToRomanNumerals(2018);
-        Assert.AreEqual(actual, "MMXVIII");
+        var actual = _service.ToRomanNumerals(value);
+        Assert.AreEqual(expected, actual);
     }
 }

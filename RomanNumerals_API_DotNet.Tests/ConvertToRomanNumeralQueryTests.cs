@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RomanNumerals_API_DotNet.Controllers.API;
+using RomanNumerals_API_DotNet.Queries;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -12,6 +12,8 @@ public sealed class ConvertToRomanNumeralQueryTests
     [DataRow(0, false)]
     [DataRow(4000, false)]
     [DataRow(2000, true)]
+    [DataRow(1, true)]
+    [DataRow(3999, true)]
     public void ConvertToRomanNumeralQueryValidates(int number, bool expectedToBeValid)
     {
         // Arrange.
