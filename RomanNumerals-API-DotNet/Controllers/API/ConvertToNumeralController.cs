@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using RomanNumerals_API_DotNet.Models;
 using RomanNumerals_API_DotNet.Queries;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ public sealed class ConvertToNumeralController(IMediator mediator) : ControllerB
         [FromQuery] ConvertToRomanNumeralQuery query,
         CancellationToken cancellationToken)
     {
-        return await mediator.Send(query, cancellationToken);
+        ConversionResult conversion = await mediator
+            .Send(query, cancellationToken);
+        return conversion.ToString();
     }
 }

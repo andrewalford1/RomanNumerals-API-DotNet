@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using RomanNumerals_API_DotNet.Interfaces;
+using RomanNumerals_API_DotNet.Models;
 
 namespace RomanNumerals_API_DotNet.Services;
 
-public class IntegerConversionService : IIntegerConversionService
+public class ConversionService : IConversionService
 {
     private static readonly IReadOnlyDictionary<int, string> _conversionTable 
         = new Dictionary<int, string>()
@@ -24,7 +25,7 @@ public class IntegerConversionService : IIntegerConversionService
             { 1, "I" }
     };
 
-    public string ToRomanNumerals(int input)
+    public ConversionResult ToRomanNumerals(int input)
     {
 
         var romanNumeralBuilder = new StringBuilder();
@@ -37,7 +38,7 @@ public class IntegerConversionService : IIntegerConversionService
             }
         }
 
-        return romanNumeralBuilder.ToString();
+        return new ConversionResult(input, romanNumeralBuilder.ToString());
     }
 
 

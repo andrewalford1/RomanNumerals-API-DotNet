@@ -4,14 +4,14 @@ using RomanNumerals_API_DotNet.Services;
 namespace RomanNumerals_API_DotNet.Tests;
 
 [TestClass]
-public class IntegerConversionTests
+public class ConversionServiceTests
 {
-    private IntegerConversionService _service;
+    private ConversionService _service;
 
     [TestInitialize]
     public void TestInitialize()
     {
-        _service = new IntegerConversionService();
+        _service = new ConversionService();
     }
 
     [DataTestMethod]

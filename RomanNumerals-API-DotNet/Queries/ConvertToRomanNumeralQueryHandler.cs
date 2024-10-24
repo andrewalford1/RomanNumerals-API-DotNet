@@ -3,17 +3,18 @@ using Microsoft.EntityFrameworkCore;
 using RomanNumerals_API_DotNet.DAL;
 using RomanNumerals_API_DotNet.DAL.Entities;
 using RomanNumerals_API_DotNet.Interfaces;
+using RomanNumerals_API_DotNet.Models;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace RomanNumerals_API_DotNet.Queries;
 
 public sealed class ConvertToRomanNumeralQueryHandler(
-    IIntegerConversionService integerConversionService,
+    IConversionService integerConversionService,
     RomanNumeralsDbContext dbContext) 
-    : IRequestHandler<ConvertToRomanNumeralQuery, string>
+    : IRequestHandler<ConvertToRomanNumeralQuery, ConversionResult>
 {
-    public async Task<string> Handle(
+    public async Task<ConversionResult> Handle(
         ConvertToRomanNumeralQuery request,
         CancellationToken cancellationToken)
     {
