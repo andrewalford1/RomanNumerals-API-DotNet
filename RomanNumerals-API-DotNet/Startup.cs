@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RomanNumerals_API_DotNet.DAL;
 using RomanNumerals_API_DotNet.Services;
 
 namespace RomanNumerals_API_DotNet
@@ -29,6 +31,8 @@ namespace RomanNumerals_API_DotNet
 
             services.AddControllersWithViews();
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(Startup).Assembly));
+            services.AddDbContext<RomanNumeralsDbContext>(options => 
+                options.UseSqlite("name=ConnectionStrings:DefaultConnection"));
 
             services.AddSingleton<IIntegerConversionService, IntegerConversionService>();
         }
