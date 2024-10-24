@@ -33,7 +33,7 @@ namespace RomanNumerals_API_DotNet
             services.AddControllersWithViews();
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(Startup).Assembly));
             services.AddDbContext<RomanNumeralsDbContext>(options => 
-                options.UseSqlite("name=ConnectionStrings:DefaultConnection"));
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddSingleton<IConversionService, ConversionService>();
             services.AddTransient<IConversionRequestReadService, ConversionRequestReadService>();

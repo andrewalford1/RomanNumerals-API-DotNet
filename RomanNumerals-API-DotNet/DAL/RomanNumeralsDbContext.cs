@@ -18,7 +18,4 @@ public class RomanNumeralsDbContext : DbContext
         var path = Environment.GetFolderPath(folder);
         DatabasePath = Path.Join(path, "romanNumerals.db");
     }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-        optionsBuilder.UseSqlite($"Data Source={DatabasePath}");
 }
