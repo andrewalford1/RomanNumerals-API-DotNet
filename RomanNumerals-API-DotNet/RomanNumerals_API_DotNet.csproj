@@ -3,4 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" />
+  </ItemGroup>
 </Project>
