@@ -12,11 +12,11 @@ namespace RomanNumerals_API_DotNet.Controllers.API;
 public sealed class ConvertToNumeralController(IMediator mediator) : ControllerBase
 {
     public async Task<string> Get(
-        [FromQuery] ConvertToRomanNumeralRequest query,
+        [FromQuery] ConvertToRomanNumeralRequest request,
         CancellationToken cancellationToken)
     {
         ConversionResult conversion = await mediator
-            .Send(query, cancellationToken);
+            .Send(request, cancellationToken);
         return conversion.ToString();
     }
 }
