@@ -30,7 +30,7 @@ public class ConversionServiceTests
     [DataRow(1000, "M")]
     public void ConvertsCorrectly(int value, string expected)
     {
-        var actual = _service.ToRomanNumerals(value);
+        var actual = _service.ToRomanNumerals(value).RomanNumeral;
         Assert.AreEqual(expected, actual);
     }
 
@@ -40,7 +40,7 @@ public class ConversionServiceTests
     [DataRow(2018, "MMXVIII")]
     public void ConvertsSomeSpecialCases(int value, string expected)
     {
-        var actual = _service.ToRomanNumerals(value);
+        var actual = _service.ToRomanNumerals(value).RomanNumeral;
         Assert.AreEqual(expected, actual);
     }
 }
