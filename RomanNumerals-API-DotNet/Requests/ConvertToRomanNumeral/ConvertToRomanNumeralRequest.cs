@@ -3,7 +3,7 @@ using RomanNumerals_API_DotNet.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace RomanNumerals_API_DotNet.Queries
+namespace RomanNumerals_API_DotNet.Requests.ConvertToRomanNumeral
 {
     public sealed class ConvertToRomanNumeralRequest : IRequest<ConversionResult>
     {

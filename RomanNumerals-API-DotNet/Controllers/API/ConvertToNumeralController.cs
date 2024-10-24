@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using RomanNumerals_API_DotNet.Models;
-using RomanNumerals_API_DotNet.Queries;
+using RomanNumerals_API_DotNet.Requests.ConvertToRomanNumeral;
 using System.Threading;
 using System.Threading.Tasks;
 

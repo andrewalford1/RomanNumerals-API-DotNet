@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RomanNumerals_API_DotNet.Queries;
+using RomanNumerals_API_DotNet.Requests.ConvertToRomanNumeral;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 

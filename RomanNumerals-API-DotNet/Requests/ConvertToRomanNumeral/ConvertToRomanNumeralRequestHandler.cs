@@ -5,12 +5,12 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RomanNumerals_API_DotNet.Queries;
+namespace RomanNumerals_API_DotNet.Requests.ConvertToRomanNumeral;
 
 public sealed class ConvertToRomanNumeralRequestHandler(
     IConversionService integerConversionService,
     IConversionRequestWriteService writeService,
-    IConversionRequestReadService readService) 
+    IConversionRequestReadService readService)
     : IRequestHandler<ConvertToRomanNumeralRequest, ConversionResult>
 {
     public async Task<ConversionResult> Handle(
