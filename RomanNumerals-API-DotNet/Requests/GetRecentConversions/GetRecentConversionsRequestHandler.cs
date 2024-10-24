@@ -15,7 +15,6 @@ public sealed class GetRecentConversionsRequestHandler(
         GetRecentConversionsRequest request, CancellationToken cancellationToken)
     {
         return await readService.GetRecentConversions(
-            request.Within,
-            cancellationToken);
+            request.Within, cancellationToken);
     }
 }
