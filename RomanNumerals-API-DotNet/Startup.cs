@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RomanNumerals_API_DotNet.DAL;
+using RomanNumerals_API_DotNet.Interfaces;
 using RomanNumerals_API_DotNet.Services;
 
 namespace RomanNumerals_API_DotNet
