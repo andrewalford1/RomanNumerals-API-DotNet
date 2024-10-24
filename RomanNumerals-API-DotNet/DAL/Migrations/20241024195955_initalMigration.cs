@@ -16,8 +16,8 @@ namespace RomanNumerals_API_DotNet.DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    ArebicValue = table.Column<int>(type: "INTEGER", nullable: false),
-                    TimesRequested = table.Column<int>(type: "INTEGER", nullable: false)
+                    ArebicNumeral = table.Column<int>(type: "INTEGER", nullable: false),
+                    TimeRequested = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

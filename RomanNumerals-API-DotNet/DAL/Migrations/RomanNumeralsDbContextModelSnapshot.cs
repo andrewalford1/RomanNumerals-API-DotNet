@@ -23,11 +23,11 @@ namespace RomanNumerals_API_DotNet.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("ArebicValue")
+                    b.Property<int>("ArebicNumeral")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("TimesRequested")
-                        .HasColumnType("INTEGER");
+                    b.Property<DateTime>("TimeRequested")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

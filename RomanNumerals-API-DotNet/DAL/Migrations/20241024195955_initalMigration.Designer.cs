@@ -11,7 +11,7 @@ using RomanNumerals_API_DotNet.DAL;
 namespace RomanNumerals_API_DotNet.DAL.Migrations
 {
     [DbContext(typeof(RomanNumeralsDbContext))]
-    [Migration("20241024191722_initalMigration")]
+    [Migration("20241024195955_initalMigration")]
     partial class initalMigration
     {
         /// <inheritdoc />
@@ -26,11 +26,11 @@ namespace RomanNumerals_API_DotNet.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("ArebicValue")
+                    b.Property<int>("ArebicNumeral")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("TimesRequested")
-                        .HasColumnType("INTEGER");
+                    b.Property<DateTime>("TimeRequested")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

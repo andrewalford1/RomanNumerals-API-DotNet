@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 namespace RomanNumerals_API_DotNet.Tests;
 
 [TestClass]
-public sealed class ConvertToRomanNumeralQueryTests
+public sealed class ConvertToRomanNumeralRequestTests
 {
     [DataTestMethod]
     [DataRow(0, false)]
@@ -17,7 +17,7 @@ public sealed class ConvertToRomanNumeralQueryTests
     public void ConvertToRomanNumeralQueryValidates(int number, bool expectedToBeValid)
     {
         // Arrange.
-        var query = new ConvertToRomanNumeralQuery
+        var query = new ConvertToRomanNumeralRequest
         {
             Number = number,
         };
@@ -29,7 +29,7 @@ public sealed class ConvertToRomanNumeralQueryTests
         Assert.AreEqual(expectedToBeValid, actuallyValid);
     }
 
-    private static bool IsQueryValid(ConvertToRomanNumeralQuery query)
+    private static bool IsQueryValid(ConvertToRomanNumeralRequest query)
     {
         var context = new ValidationContext(query);
         var results = new List<ValidationResult>();

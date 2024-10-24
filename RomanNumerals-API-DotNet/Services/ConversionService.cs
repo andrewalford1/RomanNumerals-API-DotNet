@@ -27,7 +27,7 @@ public class ConversionService : IConversionService
 
     public ConversionResult ToRomanNumerals(int input)
     {
-
+        int initalInput = input;
         var romanNumeralBuilder = new StringBuilder();
 
         foreach (var conversion in _conversionTable) { 
@@ -38,7 +38,7 @@ public class ConversionService : IConversionService
             }
         }
 
-        return new ConversionResult(input, romanNumeralBuilder.ToString());
+        return new ConversionResult(initalInput, romanNumeralBuilder.ToString());
     }
 
 

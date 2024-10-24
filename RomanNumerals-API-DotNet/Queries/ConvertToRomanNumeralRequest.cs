@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RomanNumerals_API_DotNet.Queries
 {
-    public sealed class ConvertToRomanNumeralQuery : IRequest<ConversionResult>
+    public sealed class ConvertToRomanNumeralRequest : IRequest<ConversionResult>
     {
         [Required]
         [Range(1, 3999, ErrorMessage = "Value for {0} must be between {1} and {2}.")]

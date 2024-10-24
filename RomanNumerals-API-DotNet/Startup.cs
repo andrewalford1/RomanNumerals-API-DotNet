@@ -36,6 +36,8 @@ namespace RomanNumerals_API_DotNet
                 options.UseSqlite("name=ConnectionStrings:DefaultConnection"));
 
             services.AddSingleton<IConversionService, ConversionService>();
+            services.AddTransient<IConversionRequestReadService, ConversionRequestReadService>();
+            services.AddTransient<IConversionRequestWriteService, ConversionRequestWriteService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
